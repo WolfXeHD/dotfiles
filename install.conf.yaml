@@ -5,12 +5,21 @@
 - clean: ['~']
 
 - link:
-    ~/.vimrc:      vimrc
-    ~/.tmux.conf:  tmux.conf
-    ~/.zshrc:      zshrc
-    ~/.gitignore:  gitignore
-    ~/.taskrc:     taskrc
-    ~/.taskopenrc: taskopenrc
+    ~/.bash_profile:      bash_profile
+    ~/.Brewfile:          Brewfile
+    ~/.fzf.bash:          fzf.bash
+    ~/.fzf.zsh:           fzf.zsh
+    ~/.gitconfig:         gitconfig
+    ~/.gitignore:         gitignore
+    ~/.install.conf.yaml: install.conf.yaml
+    ~/.NERDTreeBookmarks: NERDTreeBookmarks
+    ~/.plugins.zsh:       plugins.zsh
+    ~/.taskopenrc:        taskopenrc
+    ~/.taskrc:            taskrc
+    ~/.tmux.conf:         tmux.conf
+    ~/.vimrc:             vimrc
+    ~/.zpreztorc:         zpreztorc
+    ~/.zshrc:             zshrc
 
 - shell:
   - [git submodule update --init --recursive, Installing submodules]

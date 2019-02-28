@@ -1,0 +1,26 @@
+[user]
+	; email = tim.m.wolf@gmx.de
+	; name = Tim Wolf
+	name = Tim Michael Heinz Wolf
+	email = tim.michael.heinz.wolf@cern.ch
+[core]
+	editor = vim
+	excludesfile = /Users/timwolf/.gitignore_global
+[alias]
+	lg = log --oneline --graph --decorate --all
+  ld = log --pretty=format:"%C(yellow)%h\\ %ad%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --graph --date=relative --all
+  lg1=log --oneline --graph --decorate
+  ls =log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --date=relative
+  lg=log --graph --abbrev-commit --decorate --date=relative --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C    (reset)%C(bold yellow)%d%C(reset)' --all
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
+[mergetool "sourcetree"]
+	cmd = /Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
+[web]
+	browser = =
+[push]
+	default = simple
+[http]
+	postBuffer = 209715200
