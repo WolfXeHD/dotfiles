@@ -1,0 +1,16 @@
+- defaults:
+    link:
+      relink: true
+
+- clean: ['~']
+
+- link:
+    ~/.vimrc:      vimrc
+    ~/.tmux.conf:  tmux.conf
+    ~/.zshrc:      zshrc
+    ~/.gitignore:  gitignore
+    ~/.taskrc:     taskrc
+    ~/.taskopenrc: taskopenrc
+
+- shell:
+  - [git submodule update --init --recursive, Installing submodules]
