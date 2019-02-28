@@ -27,7 +27,13 @@ Plug 'bronson/vim-trailing-whitespace'
 Plug 'majutsushi/tagbar', { 'for': ['cpp', 'cxx'] }
 Plug 'altercation/vim-colors-solarized'
 
-Plug 'Valloric/YouCompleteMe'
+function! BuildYCM(info)
+  if a:info.status == 'installed' || a:info.force
+    !./install.py --clang-completer --gocode-completer
+  endif
+endfunction
+Plug 'Valloric/YouCompleteMe', {'do': function('BuildYCM') }
+
 Plug 'davidhalter/jedi'
 Plug 'pearofducks/ansible-vim'
 

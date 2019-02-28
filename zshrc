@@ -1,14 +1,5 @@
-#
-# Executes commands at the start of an interactive session.
-#
-# Authors:
-#   Sorin Ionescu <sorin.ionescu@gmail.com>
-#
-
-# Source Prezto.
-if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
-  source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
-fi
+export ZPLUG_HOME=/usr/local/opt/zplug
+source $ZPLUG_HOME/init.zsh
 
 HISTSIZE=5000
 HISTFILESIZE=10000
@@ -22,46 +13,27 @@ export LC_NUMERIC="en_US.UTF-8"
 export LC_TIME="en_US.UTF-8"
 export LC_ALL=
 
-alias lognik="ssh -Y twolf@login.nikhef.nl"
 alias skim='/Applications/Skim.app/Contents/MacOS/Skim'
-alias jaxo="java -jar /Users/timwolf/Physics/jaxodraw-2.1-0/jaxodraw-2.1-0.jar"
-alias gtp="cd ~/nikhef/project/"
-alias gtd="cd ~/nikhef/data/"
 
-alias lxplus="ssh -Y tiwolf@lxplus.cern.ch"
-
-alias stbc-i1="ssh -Y twolf@stbc-i1"
-alias stbc-i2="ssh -Y twolf@stbc-i2"
-alias stbc-i3="ssh -Y twolf@stbc-i3"
-alias stbc-i4="ssh -Y twolf@stbc-i4"
-
-alias ki='kinit tiwolf@CERN.CH'
 alias sb='source ~/.bash_profile'
 
-alias log-i1="ssh -t -Y twolf@login.nikhef.nl 'ssh -Y stbc-i1'"
-alias log-i2="ssh -t -Y twolf@login.nikhef.nl 'ssh -Y stbc-i2'"
-alias log-i3="ssh -t -Y twolf@login.nikhef.nl 'ssh -Y stbc-i3'"
-alias log-i4="ssh -t -Y twolf@login.nikhef.nl 'ssh -Y stbc-i4'"
-alias log-i5="ssh -t -Y twolf@login.nikhef.nl 'ssh -Y stbc-i5'"
-alias log-i6="ssh -t -Y twolf@login.nikhef.nl 'ssh -Y stbc-i6'"
+export CLICOLOR=1
+export LSCOLORS=exfxcxdxbxegedabagacad
 alias ta="tmux attach"
 alias ll="ls -ltrh"
 alias mnik="mount.sh"
 alias unik="umount.sh"
+
 alias latexdiff="PATH=/usr/local/Cellar/perl@5.18/5.18.2/bin:$PATH && latexdiff"
 alias root="root -l"
-
-# export PATH="/usr/local/opt/expat/bin:$PATH"
-# export PATH="/usr/local/opt/openssl/bin:$PATH"
-# export PATH="/usr/local/bin:$PATH"
 
 export PATH="/usr/local/Cellar/perl/5.28.0/bin:$PATH"
 
 export LD_LIBRARY_PATH=$ROOTSYS/lib:$PYTHONDIR/lib:$LD_LIBRARY_PATH
 export PYTHONPATH=$ROOTSYS/lib:$PYTHONPATH
 
-# source /usr/local/opt/root/bin/thisroot.sh
-# pushd /usr/local >/dev/null; . bin/thisroot.sh; popd >/dev/null
+source /usr/local/opt/root/bin/thisroot.sh
+pushd /usr/local >/dev/null; . bin/thisroot.sh; popd >/dev/null
 
 alias vim='mvim -v'
 
@@ -71,28 +43,34 @@ export PATH=/Users/timwolf/UsefulThings:$PATH
 export PATH=/Users/timwolf/UsefulThings/gallery:$PATH
 export PATH=/Users/timwolf/.go/bin:$PATH
 
-[ -f ~/.fzf.bash ] && source ~/.fzf.zsh
+has_plugin() {
+    (( $+functions[zplug] )) || return 1
+    zplug check "${1:?too few arguments}"
+    return $status
+}
 
-if [[ -f ~/.zplug/init.zsh ]]; then
-    export ZPLUG_LOADFILE=~/dotfiles/zsh/plugins.zsh
-    source ~/.zplug/init.zsh
+zplug "zplug/zplug"
+zplug "zsh-users/zsh-syntax-highlighting", defer:2
+zplug "zsh-users/zsh-completions"
+zplug "zsh-users/zsh-history-substring-search"
+zplug "zsh-users/zsh-autosuggestions", at:"develop", defer:2
+AUTOSUGGESTION_HIGHLIGHT_COLOR="fg=white"
+zplug "rupa/z", use:z.sh
+zplug "Tarrasch/zsh-bd"
+zplug "junegunn/fzf"
+zplug "mafredri/zsh-async", from:github
+zplug "sindresorhus/pure", use:pure.zsh, from:github, as:theme
 
-    if ! zplug check --verbose; then
-        printf "Install? [y/N]: "
-        if read -q; then
-            echo; zplug install
-        fi
-        echo
+# Install plugins if there are plugins that have not been installed
+if ! zplug check --verbose; then
+    printf "Install? [y/N]: "
+    if read -q; then
+        echo; zplug install
     fi
-    zplug load
 fi
 
-zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
-zstyle ':completion:*' verbose yes
-zstyle ':completion:*' completer _expand _complete _match _prefix _approximate _list _history
-zstyle ':completion:*:*files' ignored-patterns '*?.o' '*?~' '*\#'
-zstyle ':completion:*' use-cache true
-zstyle ':completion:*:*:-subscript-:*' tag-order indexes parameters
+# Source plugins and add commands to $PATH
+zplug load
 
 export EDITOR='nvim'
 export VISUAL='nvim'
@@ -112,3 +90,4 @@ alias tproj=taskprojectfunction
 unsetopt share_history
 bindkey -v
 export KEYTIMEOUT=20
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
