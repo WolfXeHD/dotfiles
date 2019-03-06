@@ -5,22 +5,25 @@
 - clean: ['~']
 
 - link:
-    ~/.bash_profile:      bash_profile
-    ~/.Brewfile:          Brewfile
-    ~/.fzf.bash:          fzf.bash
-    ~/.fzf.zsh:           fzf.zsh
-    ~/.gitconfig:         gitconfig
-    ~/.gitignore:         gitignore
-    ~/.install.conf.yaml: install.conf.yaml
-    ~/.NERDTreeBookmarks: NERDTreeBookmarks
-    ~/.plugins.zsh:       plugins.zsh
-    ~/.taskopenrc:        taskopenrc
-    ~/.taskrc:            taskrc
-    ~/.tmux.conf:         tmux.conf
-    ~/.vimrc:             vimrc
-    ~/.zpreztorc:         zpreztorc
-    ~/.zshrc:             zshrc
-    ~/.bin/tmuxinator:    tmuxinator.zsh
+    ~/.bash_profile:                  bash_profile
+    ~/.Brewfile:                      Brewfile
+    ~/.fzf.bash:                      fzf.bash
+    ~/.fzf.zsh:                       fzf.zsh
+    ~/.gitconfig:                     gitconfig
+    ~/.gitignore:                     gitignore
+    ~/.install.conf.yaml:             install.conf.yaml
+    ~/.NERDTreeBookmarks:             NERDTreeBookmarks
+    ~/.plugins.zsh:                   plugins.zsh
+    ~/.taskopenrc:                    taskopenrc
+    ~/.taskrc:                        taskrc
+    ~/.tmux.conf:                     tmux.conf
+    ~/.vimrc:                         vimrc
+    ~/.zpreztorc:                     zpreztorc
+    ~/.zshrc:                         zshrc
+    ~/.bin/tmuxinator:                tmuxinator.zsh
+    ~/.config/tmuxinator/generic.yml: generic.yml
+    ~/.config/tmuxinator/CERN.yml:    CERN.yml
+    ~/.config/tmuxinator/thesis.yml:  thesis.yml
 
 - shell:
   - [git submodule update --init --recursive, Installing submodules]

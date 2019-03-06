@@ -1,0 +1,32 @@
+# ~/.tmuxinator/CERN.yml
+
+name: CERN
+root: ~/Nextcloud/CV/Motivation_CernFellow
+
+windows:
+  - Fellow:
+      layout: f9d3,135x47,0,0[135x29,0,0,3,135x17,0,30{68x17,0,30[68x13,0,30,4,68x3,0,44,7],66x17,69,30[66x13,69,30,5,66x3,69,44,6]}]
+      # you get this from "$ tmux list-windows"
+      panes:
+        - vim
+        -
+        -
+        - ssh -t -Y twolf@login.nikhef.nl 'ssh -t -Y stbc-i2 tmux attach'
+        - ssh -t -Y twolf@login.nikhef.nl 'ssh -t -Y stbc-i2 tmux attach'
+  # - io_things:
+  #     layout: tiled
+  #     panes:
+  #       - lsof
+  #       - iostat -w 10
+  #       - netstat
+  #       - vim
+  # - more_things:
+  #     layout: main-vertical
+  #     panes:
+  #       - is_my_machine_alive:
+  #         - ping localhost
+  #       - run_several_commands:
+  #         - cd /
+  #         - cd var
+  #         - cd log
+  #         - ls

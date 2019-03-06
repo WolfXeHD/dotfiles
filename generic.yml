@@ -1,0 +1,15 @@
+# ~/.tmuxinator/generic.yml
+
+name: generic
+# root: ~/
+
+windows:
+  - Thesis:
+      layout: 77e6,181x47,0,0[181x39,0,0,45,181x7,0,40{91x7,0,40[91x3,0,40,46,91x3,0,44,47],89x7,92,40[89x3,92,40,48,89x3,92,44,49]}]
+      panes:
+        - nvim
+        -
+        -
+        -
+        -
+
