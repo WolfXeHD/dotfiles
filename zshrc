@@ -20,7 +20,7 @@ alias sb='source ~/.bash_profile'
 export CLICOLOR=1
 export LSCOLORS=exfxcxdxbxegedabagacad
 alias ta="tmux attach"
-alias ll="ls -ltrh"
+alias ll="ls -ltrha"
 alias mnik="mount.sh"
 alias unik="umount.sh"
 
