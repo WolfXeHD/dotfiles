@@ -28,6 +28,7 @@ alias latexdiff="PATH=/usr/local/Cellar/perl@5.18/5.18.2/bin:$PATH && latexdiff"
 alias root="root -l"
 
 export PATH="/usr/local/Cellar/perl/5.28.0/bin:$PATH"
+fpath=(/usr/local/share/zsh-completions $fpath)
 
 export LD_LIBRARY_PATH=$ROOTSYS/lib:$PYTHONDIR/lib:$LD_LIBRARY_PATH
 export PYTHONPATH=$ROOTSYS/lib:$PYTHONPATH

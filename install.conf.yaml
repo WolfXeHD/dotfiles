@@ -20,6 +20,7 @@
     ~/.vimrc:             vimrc
     ~/.zpreztorc:         zpreztorc
     ~/.zshrc:             zshrc
+    ~/.bin/tmuxinator:    tmuxinator.zsh
 
 - shell:
   - [git submodule update --init --recursive, Installing submodules]
