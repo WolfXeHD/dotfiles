@@ -20,7 +20,7 @@
     ~/.vimrc:                         vimrc
     ~/.zpreztorc:                     zpreztorc
     ~/.zshrc:                         zshrc
-    ~/.bin/tmuxinator:                tmuxinator.zsh
+    ~/.bin/tmuxinator.zsh:            tmuxinator.zsh
     ~/.config/tmuxinator/generic.yml: generic.yml
     ~/.config/tmuxinator/CERN.yml:    CERN.yml
     ~/.config/tmuxinator/thesis.yml:  thesis.yml

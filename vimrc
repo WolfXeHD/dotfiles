@@ -33,6 +33,7 @@ function! BuildYCM(info)
   endif
 endfunction
 Plug 'Valloric/YouCompleteMe', {'do': function('BuildYCM') }
+Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
 
 Plug 'davidhalter/jedi'
 Plug 'pearofducks/ansible-vim'
