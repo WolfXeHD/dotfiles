@@ -1,3 +1,5 @@
 .session.vim
 .*.swp
 .*.swo
+fzf.bash
+fzf.zsh

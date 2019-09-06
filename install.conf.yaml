@@ -4,6 +4,11 @@
 
 - clean: ['~']
 
+- shell:
+  - [mkdir -p ~/.bin]
+  - [mkdir -p ~/.config/tmuxinator]
+  - [git submodule update --init --recursive, Installing submodules]
+
 - link:
     ~/.bash_profile:                  bash_profile
     ~/.Brewfile:                      Brewfile
@@ -25,5 +30,3 @@
     ~/.config/tmuxinator/CERN.yml:    CERN.yml
     ~/.config/tmuxinator/thesis.yml:  thesis.yml
 
-- shell:
-  - [git submodule update --init --recursive, Installing submodules]
