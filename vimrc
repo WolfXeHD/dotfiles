@@ -381,7 +381,6 @@ let g:ale_python_flake8_options='--ignore=E501'
 let g:ale_cpp_gcc_options='-std=c++14 -Wall'
 let g:ale_sign_column_always = 1
 let g:ale_set_loclist = 0
-let g:ale_set_quickfix = 1
 let g:ale_open_list = 0
 let g:ale_lint_on_text_changed = 0
 let g:ale_lint_on_enter = 0
@@ -391,8 +390,8 @@ let g:ale_tex_chktex_options='--nowarn'
 let g:ale_keep_list_window_open = 1
 
 " works on my mac! (had to remove the "_wrap" suffix - stoomboot not sure
-map <silent> [x <Plug>(ale_previous)
-map <silent> ]x <Plug>(ale_next)
+map <silent> [x :ALEPreviousWrap<CR>
+map <silent> ]x :ALENextWrap<CR>
 " }}}
 " Airline, Peekaboo, fzf settings {{{
 " Prefix for the peekaboo key mapping (default: '')
@@ -433,6 +432,7 @@ let g:vimtex_view_general_viewer
       \ = '/Applications/Skim.app/Contents/SharedSupport/displayline'
 let g:vimtex_view_general_options = '-r @line @pdf @tex'
 let g:vimtex_latexmk_callback_hooks = ['UpdateSkim']
+let g:vimtex_quickfix_mode=0
 let g:tex_flavor='latex'
 function! UpdateSkim(status)
   if !a:status | return | endif

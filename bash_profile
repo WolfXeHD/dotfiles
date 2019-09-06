@@ -17,7 +17,6 @@ export LC_TIME="en_US.UTF-8"
 export LC_ALL=
 
 alias mate="/Applications/MacPorts/TextMate.app/Contents/MacOS/TextMate"
-alias lognik="ssh -Y twolf@login.nikhef.nl"
 alias eclipse="/Applications/eclipse/eclipse"
 alias skim='/Applications/Skim.app/Contents/MacOS/Skim'
 alias jaxo="java -jar /Users/timwolf/Physics/jaxodraw-2.1-0/jaxodraw-2.1-0.jar"
@@ -43,6 +42,10 @@ alias log-i1="ssh -t -Y twolf@login.nikhef.nl 'ssh -Y stbc-i1'"
 alias log-i2="ssh -t -Y twolf@login.nikhef.nl 'ssh -Y stbc-i2'"
 alias log-i3="ssh -t -Y twolf@login.nikhef.nl 'ssh -Y stbc-i3'"
 alias log-i4="ssh -t -Y twolf@login.nikhef.nl 'ssh -Y stbc-i4'"
+
+alias log-mid2='ssh twolf@midway2-login1.rcc.uchicago.edu'
+
+
 alias ta="tmux attach"
 alias ll="ls -ltrh"
 alias mnik="mount.sh"
@@ -76,3 +79,4 @@ alias mult="if [ ! -d ~/nikhef/project/results/git/MultiBDT ]; then
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
+export PYENV_VIRTUALENVWRAPPER_PREFER_PYVENV="true"

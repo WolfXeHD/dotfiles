@@ -3,6 +3,16 @@ source $ZPLUG_HOME/init.zsh
 
 HISTSIZE=5000
 HISTFILESIZE=10000
+SAVEHIST=5000
+HISTFILE=~/.bash_history
+setopt EXTENDED_HISTORY
+setopt HIST_EXPIRE_DUPS_FIRST
+setopt HIST_IGNORE_DUPS
+setopt HIST_IGNORE_ALL_DUPS
+setopt HIST_IGNORE_SPACE
+setopt HIST_FIND_NO_DUPS
+setopt HIST_SAVE_NO_DUPS
+setopt HIST_BEEP
 
 export LANG="en_US.UTF-8"
 export LC_COLLATE="en_US.UTF-8"
@@ -24,11 +34,15 @@ alias ll="ls -ltrha"
 alias mnik="mount.sh"
 alias unik="umount.sh"
 
-alias latexdiff="PATH=/usr/local/Cellar/perl@5.18/5.18.2/bin:$PATH && latexdiff"
 alias root="root -l"
 
-export PATH="/usr/local/Cellar/perl/5.28.0/bin:$PATH"
 fpath=(/usr/local/share/zsh-completions $fpath)
+
+
+alias log-mid2='ssh twolf@midway2-login1.rcc.uchicago.edu'
+alias log-dali1='ssh twolf@dali-login1.rcc.uchicago.edu'
+alias log-dali2='ssh twolf@dali-login2.rcc.uchicago.edu'
+# eval "$(docker-machine env default)"
 
 export LD_LIBRARY_PATH=$ROOTSYS/lib:$PYTHONDIR/lib:$LD_LIBRARY_PATH
 export PYTHONPATH=$ROOTSYS/lib:$PYTHONPATH
@@ -43,6 +57,7 @@ export PATH=/Users/timwolf/nikhef:$PATH
 export PATH=/Users/timwolf/UsefulThings:$PATH
 export PATH=/Users/timwolf/UsefulThings/gallery:$PATH
 export PATH=/Users/timwolf/.go/bin:$PATH
+export PATH=/Users/timwolf/UsefulThings/trello-cli/bin:$PATH
 
 has_plugin() {
     (( $+functions[zplug] )) || return 1
@@ -88,7 +103,8 @@ taskprojectfunction() {
 }
 alias tproj=taskprojectfunction
 
-unsetopt share_history
+setopt share_history
+setopt histappend
 bindkey -v
 export KEYTIMEOUT=20
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
