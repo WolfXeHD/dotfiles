@@ -35,6 +35,7 @@ alias mnik="mount.sh"
 alias unik="umount.sh"
 
 alias root="root -l"
+alias wget_arxiv="wget --user-agent=\"Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.103 Safari/537.36\""
 
 fpath=(/usr/local/share/zsh-completions $fpath)
 
@@ -53,11 +54,7 @@ pushd /usr/local >/dev/null; . bin/thisroot.sh; popd >/dev/null
 alias vim='mvim -v'
 
 export PATH=/usr/local/bin:/usr/local/sbin:$PATH
-export PATH=/Users/timwolf/nikhef:$PATH
-export PATH=/Users/timwolf/UsefulThings:$PATH
-export PATH=/Users/timwolf/UsefulThings/gallery:$PATH
-export PATH=/Users/timwolf/.go/bin:$PATH
-export PATH=/Users/timwolf/UsefulThings/trello-cli/bin:$PATH
+export PATH=/Users/twolf/Physics/UsefulTools/gallery:$PATH
 
 has_plugin() {
     (( $+functions[zplug] )) || return 1
@@ -97,6 +94,7 @@ alias tl='task list'
 alias ta='task add $1'
 alias tm='task $1 modify '
 alias te='task $1 edit'
+ulimit -n 4096
 
 taskprojectfunction() {
   task $1 modify project:$2

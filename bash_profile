@@ -1,7 +1,6 @@
 HISTSIZE=5000
 HISTFILESIZE=10000
 
-export PATH
 export CLICOLOR=1
 
 export LSCOLORS=GxFxCxDxBxegedabagaced
@@ -45,7 +44,6 @@ alias log-i4="ssh -t -Y twolf@login.nikhef.nl 'ssh -Y stbc-i4'"
 
 alias log-mid2='ssh twolf@midway2-login1.rcc.uchicago.edu'
 
-
 alias ta="tmux attach"
 alias ll="ls -ltrh"
 alias mnik="mount.sh"
@@ -57,6 +55,7 @@ export PATH="/usr/local/opt/expat/bin:$PATH"
 export PATH="/usr/local/opt/openssl/bin:$PATH"
 export PATH="/usr/local/bin:$PATH"
 export PATH="/usr/local/Cellar/perl/5.24.1/bin:$PATH"
+export PATH="/usr/local/texlive/2019/bin/x86_64-darwin/"
 
 export LD_LIBRARY_PATH=$ROOTSYS/lib:$PYTHONDIR/lib:$LD_LIBRARY_PATH
 export PYTHONPATH=$ROOTSYS/lib:$PYTHONPATH
@@ -64,12 +63,9 @@ export PYTHONPATH=$ROOTSYS/lib:$PYTHONPATH
 . /usr/local/opt/root6/libexec/thisroot.sh
 
 export SVN_EDITOR=vim
-export PYTHIA8=/Users/timwolf/pythia8205/pythia8205
 
 export PATH=/usr/local/bin:/usr/local/sbin:$PATH
-export PATH=/Users/timwolf/nikhef:$PATH
-export PATH=/Users/timwolf/UsefulThings:$PATH
-export PATH=/Users/timwolf/UsefulThings/gallery:$PATH
+export PATH=/Users/twolf/Physics/UsefulTools/gallery:$PATH
 
 alias mult="if [ ! -d ~/nikhef/project/results/git/MultiBDT ]; then
               sshfs -o allow_root twolf@login.nikhef.nl:/project/atlas/users/twolf /Users/timwolf/nikhef/project

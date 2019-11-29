@@ -31,6 +31,7 @@ Plug 'christoomey/vim-tmux-navigator'
 Plug 'bronson/vim-trailing-whitespace'
 Plug 'majutsushi/tagbar', { 'for': ['cpp', 'cxx'] }
 Plug 'altercation/vim-colors-solarized'
+Plug 'kynan/dokuvimki', {'on': 'DokuVimKi'}
 
 function! BuildYCM(info)
   if a:info.status == 'installed' || a:info.force
@@ -476,6 +477,25 @@ let g:ycm_semantic_triggers.tex = [
     \ ]
 
 " }}}
-" Abbreviations {{{
-iabbrev @@    tim.michael.heinz.wolf@cern.ch
+" DokuWiki {{{
+" looks for DokuWiki headlines in the first 20 lines
+" of the current buffer
+fun IsDokuWiki()
+  if match(getline(1,20),'^ \=\(=\{2,6}\).\+\1 *$') >= 0
+    set textwidth=0
+    set wrap
+    set linebreak
+    set filetype=dokuwiki
+  endif
+endfun
+
+" check for dokuwiki syntax
+autocmd BufWinEnter *.txt call IsDokuWiki()
+
+" Include DokuVimKi Configuration
+if filereadable($HOME."/.vim/dokuvimkirc")
+  source $HOME/.vim/dokuvimkirc
+endif
+
+syntax on
 " }}}
