@@ -2,7 +2,7 @@
 	; email = tim.m.wolf@gmx.de
 	; name = Tim Wolf
 	name = Tim Michael Heinz Wolf
-	email = tim.michael.heinz.wolf@cern.ch
+	email = twolf@mpi-hd.mpg.de
 [core]
 	editor = vim
 	excludesfile = /Users/timwolf/.gitignore_global
