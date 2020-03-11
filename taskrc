@@ -29,3 +29,17 @@ data.location=~/.task
 #include /usr/local/Cellar/task/2.5.1/share/doc/task/rc/solarized-light-256.theme
 #include /usr/local/Cellar/task/2.5.1/share/doc/task/rc/no-color.theme
 
+context.work=project:work
+context.private=project:private
+context.personal=projects.not:work projects.not:fun -fun
+
+#inthe.am sync
+
+taskd.certificate=/Users/twolf/tasknotes/sync_files/private.certificate.pem
+taskd.key=/Users/twolf/tasknotes/sync_files/private.key.pem
+taskd.ca=/Users/twolf/tasknotes/sync_files/ca.cert.pem
+taskd.server=taskwarrior.inthe.am:53589
+# taskd.server=taskwarrior.inthe.am:22
+taskd.credentials=inthe_am/tim.wolf.mail/69ff9a72-2cfb-440c-868e-44571c8bd091
+taskd.trust=ignore hostname
+context=work

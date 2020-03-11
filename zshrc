@@ -47,14 +47,15 @@ alias log-dali2='ssh twolf@dali-login2.rcc.uchicago.edu'
 
 export LD_LIBRARY_PATH=$ROOTSYS/lib:$PYTHONDIR/lib:$LD_LIBRARY_PATH
 export PYTHONPATH=$ROOTSYS/lib:$PYTHONPATH
+export PATH="/usr/local/anaconda3/bin:$PATH"
+export PATH=/usr/local/bin:/usr/local/sbin:$PATH
+export PATH=/Users/twolf/Physics/UsefulTools/gallery:$PATH
 
 source /usr/local/opt/root/bin/thisroot.sh
 pushd /usr/local >/dev/null; . bin/thisroot.sh; popd >/dev/null
 
 alias vim='mvim -v'
 
-export PATH=/usr/local/bin:/usr/local/sbin:$PATH
-export PATH=/Users/twolf/Physics/UsefulTools/gallery:$PATH
 
 has_plugin() {
     (( $+functions[zplug] )) || return 1
@@ -94,6 +95,8 @@ alias tl='task list'
 alias ta='task add $1'
 alias tm='task $1 modify '
 alias te='task $1 edit'
+alias tlw='task -private list'
+
 ulimit -n 4096
 
 taskprojectfunction() {
@@ -106,3 +109,23 @@ setopt histappend
 bindkey -v
 export KEYTIMEOUT=20
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+
+### Aliases for Midway
+alias 'start_stats'="ssh twolf@midway2-login1.rcc.uchicago.edu /project2/lgrandi/xenonnt/development/start_jupyter.py --conda_path /project2/lgrandi/Anaconda3/bin/conda --env pax_head"
+
+ssh_stats () {
+#ssh -fN -L 15795:10.50.222.160:15795 twolf@dali-login1.rcc.uchicago.edu && open http://localhost:15795/?token=f74ce9bd47b701ca9017105b6c384b6f6077701c9e343e6c
+  # sed -i -e 's/dali-login1.rcc.uchicago.edu/midway2-login1.rcc.uchicago.edu/g' $1
+  my_command=$(echo $1 | sed 's/dali-login1.rcc.uchicago.edu/midway2-login1.rcc.uchicago.edu/g')
+  my_command=$(echo $my_command | sed 's/dali-login2.rcc.uchicago.edu/midway2-login1.rcc.uchicago.edu/g')
+  my_command=$(echo $my_command | sed "s/open /open \'/g")
+  my_command="$my_command'"
+
+  IFS='&&' # space is set as delimiter
+  read -A ADDR <<< "$my_command" # str is read into an array as tokens separated by IFS
+  for i in "${ADDR[@]}"; do # access each element of array
+      echo $i
+      eval "$i"
+  done
+}
