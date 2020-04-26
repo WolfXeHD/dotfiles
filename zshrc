@@ -27,13 +27,12 @@ export LSCOLORS=exfxcxdxbxegedabagacad
 
 fpath=(/usr/local/share/zsh-completions $fpath)
 
-export LD_LIBRARY_PATH=$ROOTSYS/lib:$PYTHONDIR/lib:$LD_LIBRARY_PATH
-export PYTHONPATH=$ROOTSYS/lib:$PYTHONPATH
+# export LD_LIBRARY_PATH=$ROOTSYS/lib:$PYTHONDIR/lib:$LD_LIBRARY_PATH
+# export PYTHONPATH=$ROOTSYS/lib:$PYTHONPATH
 export PATH=/usr/local/bin:/usr/local/sbin:$PATH
 export PATH=/Users/twolf/Physics/UsefulTools/gallery:$PATH
 
-source /usr/local/opt/root/bin/thisroot.sh
-pushd /usr/local >/dev/null; . bin/thisroot.sh; popd >/dev/null
+# source /usr/local/opt/root/bin/thisroot.sh
 
 
 has_plugin() {
