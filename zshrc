@@ -64,8 +64,8 @@ fi
 # Source plugins and add commands to $PATH
 zplug load
 
-export EDITOR='nvim'
-export VISUAL='nvim'
+export EDITOR='vim'
+export VISUAL='vim'
 source ~/.bin/tmuxinator.zsh
 
 ulimit -n 4096
@@ -78,6 +78,7 @@ alias skim='/Applications/Skim.app/Contents/MacOS/Skim'
 alias sb='source ~/.bash_profile'
 alias root="root -l"
 alias wget_arxiv="wget --user-agent=\"Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.103 Safari/537.36\""
+alias straxlab='ssh twolf@dali-login1.rcc.uchicago.edu /project2/lgrandi/xenonnt/development/start_jupyter.py'
 
 # taskwarrior aliases
 alias tl='task list'
@@ -85,6 +86,9 @@ alias ta='task add $1'
 alias tm='task $1 modify '
 alias te='task $1 edit'
 alias tlw='task -private list'
+
+# todo.txt aliases
+alias t="todo.sh"
 
 
 taskprojectfunction() {
@@ -96,10 +100,14 @@ setopt share_history
 setopt histappend
 bindkey -v
 export KEYTIMEOUT=20
+# export HTTP_PROXY=www-cache.mpi-hd.mpg.de:3128¬
+# export HTTPS_PROXY=www-cache.mpi-hd.mpg.de:3128¬
+
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 ### Aliases for Midway
-alias 'start_stats'="ssh twolf@midway2-login1.rcc.uchicago.edu /project2/lgrandi/xenonnt/development/start_jupyter.py --conda_path /project2/lgrandi/Anaconda3/bin/conda --env pax_head"
+# alias 'start_stats'="ssh twolf@midway2-login1.rcc.uchicago.edu /project2/lgrandi/xenonnt/development/start_jupyter.py --conda_path /project2/lgrandi/Anaconda3/bin/conda --env pax_head"
+alias 'start_stats'="ssh twolf@dali2 /project2/lgrandi/xenonnt/development/start_jupyter.py --conda_path /project2/lgrandi/Anaconda3/bin/conda --env pax_head"
 
 ssh_stats () {
   my_command=$(echo $1 | sed 's/dali-login1.rcc.uchicago.edu/midway2-login1.rcc.uchicago.edu/g')
@@ -129,4 +137,21 @@ else
 fi
 unset __conda_setup
 # <<< conda initialize <<<
+
+export PATH="/usr/local/opt/python@3.9/bin:$PATH"
+if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
+export PATH="/usr/local/opt/ruby/bin:$PATH"
+export PATH="/Users/twolf/.rbenv/versions/2.3.4/bin:$PATH"
+
+# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
+export PATH="$PATH:$HOME/.rvm/bin"
+function set_http_pip {
+    export HTTP_PROXY=http://www-cache.mpi-hd.mpg.de:3128
+    export HTTPS_PROXY=https://www-cache.mpi-hd.mpg.de:3128
+}
+
+function set_http {
+    export HTTP_PROXY=www-cache.mpi-hd.mpg.de:3128
+    export HTTPS_PROXY=www-cache.mpi-hd.mpg.de:3128
+}
 

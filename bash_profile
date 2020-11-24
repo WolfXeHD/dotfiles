@@ -76,3 +76,5 @@ alias mult="if [ ! -d ~/nikhef/project/results/git/MultiBDT ]; then
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
 export PYENV_VIRTUALENVWRAPPER_PREFER_PYVENV="true"
+
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
