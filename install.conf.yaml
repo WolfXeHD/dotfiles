@@ -8,12 +8,13 @@
   - [mkdir -p ~/.bin]
   - [mkdir -p ~/.config/tmuxinator]
   - [git submodule update --init --recursive, Installing submodules]
+  - [./install-fzf.sh]
 
 - link:
     ~/.bash_profile:                  bash_profile
     ~/.Brewfile:                      Brewfile
-    ~/.fzf.bash:                      fzf.bash
-    ~/.fzf.zsh:                       fzf.zsh
+    # ~/.fzf.bash:                      fzf.bash
+    # ~/.fzf.zsh:                       fzf.zsh
     ~/.gitconfig:                     gitconfig
     ~/.gitignore:                     gitignore
     ~/.install.conf.yaml:             install.conf.yaml
