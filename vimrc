@@ -31,6 +31,8 @@ Plug 'christoomey/vim-tmux-navigator'
 Plug 'bronson/vim-trailing-whitespace'
 Plug 'majutsushi/tagbar', { 'for': ['cpp', 'cxx'] }
 Plug 'altercation/vim-colors-solarized'
+Plug 'jupyter-vim/jupyter-vim'
+
 
 function! BuildYCM(info)
   if a:info.status == 'installed' || a:info.force
