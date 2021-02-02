@@ -10,6 +10,9 @@
   - [git submodule update --init --recursive, Installing submodules]
   - [./install-fzf.sh]
 
+- create:
+  - ~/.config/nvim
+
 - link:
     ~/.bash_profile:                  bash_profile
     ~/.Brewfile:                      Brewfile
@@ -24,6 +27,7 @@
     ~/.taskrc:                        taskrc
     ~/.tmux.conf:                     tmux.conf
     ~/.vimrc:                         vimrc
+    ~/.config/nvim/init.vim:          vimrc
     ~/.zpreztorc:                     zpreztorc
     ~/.zshrc:                         zshrc
     ~/.bin/tmuxinator.zsh:            tmuxinator.zsh
