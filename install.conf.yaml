@@ -4,14 +4,23 @@
 
 - clean: ['~']
 
+- create:
+  - ~/.config/nvim
+  - ~/mysoftware
+
 - shell:
   - [mkdir -p ~/.bin]
   - [mkdir -p ~/.config/tmuxinator]
   - [git submodule update --init --recursive, Installing submodules]
   - [./install-fzf.sh]
+  - [./get_nvim.sh]
+  - [echo ]
+  - [echo ]
+  - [echo "Do the command below manually!"]
+  - [echo "curl -sL install-node.now.sh/lts | sh -s -- --prefix=$HOME/mysoftware --verbose"]
+  - [echo ]
+  - [echo ]
 
-- create:
-  - ~/.config/nvim
 
 - link:
     ~/.bash_profile:                  bash_profile

@@ -55,7 +55,7 @@ Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
 " python3 -m pip install --upgrade neovim
 
 
-Plug 'davidhalter/jedi'
+" Plug 'davidhalter/jedi'
 Plug 'pearofducks/ansible-vim'
 
 Plug 'w0rp/ale'
@@ -675,4 +675,7 @@ nnoremap <silent><nowait> <space>j  :<C-u>CocNext<CR>
 nnoremap <silent><nowait> <space>k  :<C-u>CocPrev<CR>
 " Resume latest coc list.
 nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
+
+let g:coc_global_extensions = ['coc-json', 'coc-git', 'coc-pyright', 'coc-sh']
+
 "}}}
