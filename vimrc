@@ -50,6 +50,11 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
 
+" if python3 support is not there for nvim, do
+" python3 -m pip install --upgrade pynvim
+" python3 -m pip install --upgrade neovim
+
+
 Plug 'davidhalter/jedi'
 Plug 'pearofducks/ansible-vim'
 
@@ -373,9 +378,9 @@ let g:ycm_csharp_insert_namespace_expr = ''
 let g:SuperTabDefaultCompletionType = '<C-n>'
 
 " better key bindings for UltiSnipsExpandTrigger
-let g:UltiSnipsExpandTrigger = '<c-tab>'
-let g:UltiSnipsJumpForwardTrigger = '<c-tab>'
-let g:UltiSnipsJumpBackwardTrigger = '<s-tab>'
+let g:UltiSnipsExpandTrigger = '<s-tab>'
+let g:UltiSnipsJumpForwardTrigger = '<s-tab>'
+let g:UltiSnipsJumpBackwardTrigger = '<s-q>'
 let g:UltiSnipsEditSplit = 'vertical'
 " }}}
 " Ale-settings {{{
