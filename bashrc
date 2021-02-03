@@ -7,7 +7,7 @@ fi
 
 # User specific aliases and functions
 
-[ -f /home/twolf/.fzf.bash ] && source /home/twolf/.fzf.bash
+[ -f $HOME/.fzf.bash ] && source $HOME/.fzf.bash
 
 alias ll="ls -ltrha"
 alias root='root -b'
@@ -27,9 +27,14 @@ alias qstatq='qstat -u twolf'
 alias squeueq='squeue -u twolf'
 export HISTCONTROL=ignoreboth:erasedups:ignoredups
 
-# module load tmux
-# module load vim/8.1
+if command -v module &> /dev/null
+then
+  module load tmux
+  module load vim/8.1
+fi
 
+
+# Old notebook submission
 function Jupyter_batch()
 {
   cd
@@ -46,7 +51,7 @@ function Jupyter_batch()
   cd -
 }
 
-
+# Old notebook submission
 function Jupyter_batch_dali()
 {
   cd
@@ -70,3 +75,18 @@ if [ -f "$HOME/mysoftware/nvim.appimage" ]
 then
   alias vim="$HOME/mysoftware/nvim.appimage"
 fi
+
+# MPIK functions
+# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
+export PATH="$PATH:$HOME/.rvm/bin"
+function set_http_pip {
+    export HTTP_PROXY=http://www-cache.mpi-hd.mpg.de:3128
+    export HTTPS_PROXY=https://www-cache.mpi-hd.mpg.de:3128
+}
+
+function set_http {
+    export HTTP_PROXY=www-cache.mpi-hd.mpg.de:3128
+    export HTTPS_PROXY=www-cache.mpi-hd.mpg.de:3128
+}
+
+k

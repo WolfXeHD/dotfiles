@@ -13,14 +13,12 @@
   - [mkdir -p ~/.config/tmuxinator]
   - [git submodule update --init --recursive, Installing submodules]
   - [./install-fzf.sh]
+    # nvim-installation
   - [./get_nvim.sh]
-  - [echo ]
-  - [echo ]
-  - [echo "Do the command below manually!"]
-  - [echo "curl -sL install-node.now.sh/lts | sh -s -- --prefix=$HOME/mysoftware --verbose"]
-  - [echo ]
-  - [echo ]
-
+    # installation of node-js, needed for coc in nvim
+  - [curl -sL install-node.now.sh/lts > install-node.now.sh]
+  - [chmod +x install-node.now.sh]
+  - [./install-node.now.sh -P $HOME/mysoftware -V -y]
 
 - link:
     ~/.bash_profile:                  bash_profile
