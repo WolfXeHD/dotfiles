@@ -1,5 +1,7 @@
 # .bashrc
 
+shopt -s expand_aliases
+
 # Source global definitions
 if [ -f /etc/bashrc ]; then
 	. /etc/bashrc
@@ -71,22 +73,17 @@ function Jupyter_batch_dali()
 
 # compatability with dotbot
 export PATH="$HOME/mysoftware/bin:$PATH"
+
 if [ -f "$HOME/mysoftware/nvim.appimage" ]
 then
   alias vim="$HOME/mysoftware/nvim.appimage"
 fi
 
-# MPIK functions
-# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
-export PATH="$PATH:$HOME/.rvm/bin"
-function set_http_pip {
-    export HTTP_PROXY=http://www-cache.mpi-hd.mpg.de:3128
-    export HTTPS_PROXY=https://www-cache.mpi-hd.mpg.de:3128
-}
 
-function set_http {
-    export HTTP_PROXY=www-cache.mpi-hd.mpg.de:3128
-    export HTTPS_PROXY=www-cache.mpi-hd.mpg.de:3128
-}
 
-k
+
+here=`hostname`
+if [  $here == "leibniz" ]
+then
+  source ~/.MPIK_specifics.sh
+fi

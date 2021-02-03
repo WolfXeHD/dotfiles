@@ -19,6 +19,9 @@
   - [curl -sL install-node.now.sh/lts > install-node.now.sh]
   - [chmod +x install-node.now.sh]
   - [./install-node.now.sh -P $HOME/mysoftware -V -y]
+  - [pip3 install --upgrade pynvim --user]
+  - [pip3 install --upgrade neovim --user]
+
 
 - link:
     ~/.bash_profile:                  bash_profile
@@ -35,8 +38,11 @@
     ~/.config/nvim/init.vim:          vimrc
     ~/.zpreztorc:                     zpreztorc
     ~/.zshrc:                         zshrc
-    ~/.bashrc:                        bashrc
+    ~/.bashrc:
+      path:  bashrc
+      force: true
     ~/.bin/tmuxinator.zsh:            tmuxinator.zsh
     ~/.config/tmuxinator/generic.yml: generic.yml
     ~/.config/tmuxinator/CERN.yml:    CERN.yml
     ~/.config/tmuxinator/thesis.yml:  thesis.yml
+    ~/.MPIK_specifics.sh:             MPIK_specifics.sh

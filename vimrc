@@ -50,11 +50,6 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
 
-" if python3 support is not there for nvim, do
-" python3 -m pip install --upgrade pynvim
-" python3 -m pip install --upgrade neovim
-
-
 " Plug 'davidhalter/jedi'
 Plug 'pearofducks/ansible-vim'
 
