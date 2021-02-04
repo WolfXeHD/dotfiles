@@ -47,6 +47,13 @@ export EDITOR=vim
 
 alias mux=tmuxinator
 alias ta='tmux attach'
-alias pip="set_http_pip; pip"
+# alias pip="set_http_pip; pip"
+
+function pip3() {
+  set_http_pip
+  pip "$@"
+  set_http
+}
+
 
 export PATH="$PATH:$HOME/.rvm/bin"
