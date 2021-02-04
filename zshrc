@@ -71,14 +71,12 @@ source ~/.bin/tmuxinator.zsh
 ulimit -n 4096
 
 #aliases
-alias vim='mvim -v'
-alias ta="tmux attach"
 alias ll="ls -ltrha"
 alias skim='/Applications/Skim.app/Contents/MacOS/Skim'
-alias sb='source ~/.bash_profile'
 alias root="root -l"
 alias wget_arxiv="wget --user-agent=\"Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.103 Safari/537.36\""
 alias straxlab='ssh twolf@dali-login1.rcc.uchicago.edu /project2/lgrandi/xenonnt/development/start_jupyter.py'
+
 
 # taskwarrior aliases
 alias tl='task list'
@@ -123,35 +121,21 @@ ssh_stats () {
   done
 }
 
-# >>> conda initialize >>>
-# !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/usr/local/anaconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
-if [ $? -eq 0 ]; then
-    eval "$__conda_setup"
-else
-    if [ -f "/usr/local/anaconda3/etc/profile.d/conda.sh" ]; then
-        . "/usr/local/anaconda3/etc/profile.d/conda.sh"
-    else
-        export PATH="/usr/local/anaconda3/bin:$PATH"
-    fi
-fi
-unset __conda_setup
-# <<< conda initialize <<<
 
 export PATH="/usr/local/opt/python@3.9/bin:$PATH"
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 export PATH="/usr/local/opt/ruby/bin:$PATH"
 export PATH="/Users/twolf/.rbenv/versions/2.3.4/bin:$PATH"
 
-# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
-export PATH="$PATH:$HOME/.rvm/bin"
-function set_http_pip {
-    export HTTP_PROXY=http://www-cache.mpi-hd.mpg.de:3128
-    export HTTPS_PROXY=https://www-cache.mpi-hd.mpg.de:3128
-}
 
-function set_http {
-    export HTTP_PROXY=www-cache.mpi-hd.mpg.de:3128
-    export HTTPS_PROXY=www-cache.mpi-hd.mpg.de:3128
-}
+if [ -f "$HOME/mysoftware/nvim.appimage" ]
+then
+  alias vim="$HOME/mysoftware/nvim.appimage"
+fi
 
+here=`hostname`
+
+if [ $here = "lin-1909a" ]
+then
+  source ~/.MacOS_specifics.sh
+fi
