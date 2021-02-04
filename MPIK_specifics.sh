@@ -47,8 +47,6 @@ export EDITOR=vim
 
 alias mux=tmuxinator
 alias ta='tmux attach'
+alias pip="set_http_pip; pip"
 
 export PATH="$PATH:$HOME/.rvm/bin"
-
-# does not work when environment variables are set
-# alias pip="pip --proxy=https://www-cache.mpi-hd.mpg.de:3128"
