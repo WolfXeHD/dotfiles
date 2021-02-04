@@ -39,13 +39,11 @@ Plug 'majutsushi/tagbar', { 'for': ['cpp', 'cxx'] }
 Plug 'altercation/vim-colors-solarized'
 Plug 'jupyter-vim/jupyter-vim'
 
-
-" function! BuildYCM(info)
-"   if a:info.status == 'installed' || a:info.force
-"     !./install.py --clang-completer --gocode-completer
-"   endif
-" endfunction
-" Plug 'Valloric/YouCompleteMe', {'do': function('BuildYCM') }
+let s:darwin = has('mac')
+"
+if s:darwin
+  Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate', 'commit': '3c07232'}
+endif
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
