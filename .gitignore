@@ -3,3 +3,4 @@
 .*.swo
 fzf.bash
 fzf.zsh
+install-node.now.sh

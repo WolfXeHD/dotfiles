@@ -4,16 +4,28 @@
 
 - clean: ['~']
 
+- create:
+  - ~/.config/nvim
+  - ~/mysoftware
+
 - shell:
   - [mkdir -p ~/.bin]
   - [mkdir -p ~/.config/tmuxinator]
   - [git submodule update --init --recursive, Installing submodules]
+  - [./install-fzf.sh]
+    # nvim-installation
+  - [./get_nvim.sh]
+    # installation of node-js, needed for coc in nvim
+  - [curl -sL install-node.now.sh/lts > install-node.now.sh]
+  - [chmod +x install-node.now.sh]
+  - [./install-node.now.sh -P $HOME/mysoftware -V -y]
+  - [pip3 install --upgrade pynvim --user]
+  - [pip3 install --upgrade neovim --user]
+
 
 - link:
     ~/.bash_profile:                  bash_profile
     ~/.Brewfile:                      Brewfile
-    ~/.fzf.bash:                      fzf.bash
-    ~/.fzf.zsh:                       fzf.zsh
     ~/.gitconfig:                     gitconfig
     ~/.gitignore:                     gitignore
     ~/.install.conf.yaml:             install.conf.yaml
@@ -23,10 +35,14 @@
     ~/.taskrc:                        taskrc
     ~/.tmux.conf:                     tmux.conf
     ~/.vimrc:                         vimrc
+    ~/.config/nvim/init.vim:          vimrc
     ~/.zpreztorc:                     zpreztorc
     ~/.zshrc:                         zshrc
+    ~/.bashrc:
+      path:  bashrc
+      force: true
     ~/.bin/tmuxinator.zsh:            tmuxinator.zsh
     ~/.config/tmuxinator/generic.yml: generic.yml
     ~/.config/tmuxinator/CERN.yml:    CERN.yml
     ~/.config/tmuxinator/thesis.yml:  thesis.yml
-
+    ~/.MPIK_specifics.sh:             MPIK_specifics.sh
