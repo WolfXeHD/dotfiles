@@ -46,4 +46,5 @@
     ~/.config/tmuxinator/CERN.yml:    CERN.yml
     ~/.config/tmuxinator/thesis.yml:  thesis.yml
     ~/.MPIK_specifics.sh:             MPIK_specifics.sh
+    ~/.MPIK_base.sh:                  MPIK_base.sh
     ~/.MacOS_specifics.sh:            MacOS_specifics.sh

@@ -29,11 +29,6 @@ alias qstatq='qstat -u twolf'
 alias squeueq='squeue -u twolf'
 export HISTCONTROL=ignoreboth:erasedups:ignoredups
 
-if command -v module &> /dev/null
-then
-  module load tmux
-  module load vim/8.1
-fi
 
 
 # Old notebook submission
@@ -86,4 +81,16 @@ here=`hostname`
 if [  $here == "leibniz" ]
 then
   source ~/.MPIK_specifics.sh
+fi
+
+
+if [ $here == lfs1.mpi-hd.mpg.de ]
+then
+  source ~/.MPIK_base.sh
+fi
+
+if [ $here == dali-login2.rcc.local ]
+then
+  module load tmux
+  module load vim/8.1
 fi
