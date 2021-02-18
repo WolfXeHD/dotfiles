@@ -91,6 +91,7 @@ fi
 
 if [ $here == dali-login2.rcc.local ]
 then
+  export LANG=en_US.UTF-8
   module load tmux
   module load vim/8.1
 fi
