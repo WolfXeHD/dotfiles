@@ -33,6 +33,13 @@ export PATH=/usr/local/bin:/usr/local/sbin:$PATH
 export PATH=/Users/twolf/Physics/UsefulTools/gallery:$PATH
 
 # source /usr/local/opt/root/bin/thisroot.sh
+#
+function lectures()
+{
+  cd /Users/twolf/Physics/Lectures
+  open $("fzf")
+}
+
 
 
 has_plugin() {
