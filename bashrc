@@ -14,6 +14,7 @@ fi
 alias ll="ls -ltrha"
 alias root='root -b'
 alias ta='tmux attach'
+alias qdelq='scancel $(squeue -u twolf | tail -n +2 | fzf -m | tr -s " " | cut -d " " -f 2)'
 
 # export PATH="/project2/lgrandi/anaconda3/bin:$PATH"
 export PATH="/cvmfs/xenon.opensciencegrid.org/releases/anaconda/2.4/bin:$PATH"
