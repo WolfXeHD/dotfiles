@@ -37,7 +37,7 @@ Plug 'christoomey/vim-tmux-navigator'
 Plug 'bronson/vim-trailing-whitespace'
 Plug 'majutsushi/tagbar', { 'for': ['cpp', 'cxx'] }
 Plug 'altercation/vim-colors-solarized'
-Plug 'jupyter-vim/jupyter-vim'
+Plug 'goerz/jupytext.vim'
 
 let s:darwin = has('mac')
 "
