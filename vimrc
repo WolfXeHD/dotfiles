@@ -38,7 +38,7 @@ Plug 'christoomey/vim-tmux-navigator'
 Plug 'bronson/vim-trailing-whitespace'
 Plug 'majutsushi/tagbar', { 'for': ['cpp', 'cxx'] }
 Plug 'altercation/vim-colors-solarized'
-" Plug 'jupyter-vim/jupyter-vim'
+Plug 'goerz/jupytext.vim'
 
 let s:darwin = has('mac')
 "
@@ -52,7 +52,6 @@ Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
 " Plug 'davidhalter/jedi'
 Plug 'pearofducks/ansible-vim'
 
-" Plug 'w0rp/ale'
 Plug 'lervag/vimtex', { 'for': ['tex'] }
 Plug 'gioele/vim-autoswap'
 Plug 'tpope/vim-repeat'
@@ -67,7 +66,6 @@ Plug 'shime/vim-livedown'
 Plug 'Ben201310/online-thesaurus-vim'
 Plug 'machakann/vim-highlightedyank'
 Plug 'vimwiki/vimwiki', { 'on': 'VimwikiIndex' }
-Plug 'lfv89/vim-interestingwords'
 
 
 call plug#end()
@@ -349,36 +347,6 @@ let g:UltiSnipsJumpForwardTrigger = '<s-tab>'
 let g:UltiSnipsJumpBackwardTrigger = '<s-q>'
 let g:UltiSnipsEditSplit = 'vertical'
 " }}}
-" " Ale-settings {{{
-" " let statusline=%{ALEGetStatusLine()}
-" let g:ale_statusline_format = ['⨉ %d', '⚠ %d', '⬥ ok']
-" let g:ale_linters = {
-"     \   'python': ['flake8'],
-"     \   'c++': ['clang'],
-"     \   'YAML': ['yamllint'],
-"     \   'bash': ['shellcheck'],
-"     \   'vim': ['vint']
-"     \}
-" let g:ale_sign_error = '>>'
-" let g:ale_sign_warning = '--'
-" let g:ale_set_loclist = 0
-" let g:ale_set_quickfix = 1
-" let g:ale_python_flake8_options='--ignore=E501'
-" let g:ale_cpp_gcc_options='-std=c++14 -Wall'
-" let g:ale_sign_column_always = 1
-" let g:ale_set_loclist = 0
-" let g:ale_open_list = 0
-" let g:ale_lint_on_text_changed = 0
-" let g:ale_lint_on_enter = 0
-" let g:ale_lint_on_save = 1
-" let g:ale_tex_chktex_options='--nowarn'
-"
-" let g:ale_keep_list_window_open = 1
-"
-" " works on my mac! (had to remove the "_wrap" suffix - stoomboot not sure
-" map <silent> [x :ALEPreviousWrap<CR>
-" map <silent> ]x :ALENextWrap<CR>
-" " }}}
 " Airline, Peekaboo, fzf settings {{{
 " Prefix for the peekaboo key mapping (default: '')
 " let g:peekaboo_prefix = '<leader>'
@@ -645,7 +613,7 @@ nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
 let g:coc_global_extensions = ['coc-json', 'coc-git', 'coc-pyright', 'coc-sh']
 
 "}}}
-"Tree-Sitter (from Stefan) {{{
+" Tree-Sitter (from Stefan) {{{
 "
 " return function()
 "   local has = config_utils.has
