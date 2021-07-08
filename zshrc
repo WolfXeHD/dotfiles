@@ -40,6 +40,11 @@ function lectures()
   open $("fzf")
 }
 
+function o()
+{
+  open $("fzf")
+}
+
 
 
 has_plugin() {

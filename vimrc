@@ -32,7 +32,6 @@ Plug 'ivalkeen/nerdtree-execute'
 Plug 'bling/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'rhysd/vim-clang-format', { 'for': ['cpp', 'cxx'] }
-Plug 'easymotion/vim-easymotion'
 Plug 'airblade/vim-gitgutter'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'bronson/vim-trailing-whitespace'
@@ -46,10 +45,7 @@ if s:darwin
   Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate', 'commit': '3c07232'}
 endif
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-
 Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
-
-" Plug 'davidhalter/jedi'
 Plug 'pearofducks/ansible-vim'
 
 Plug 'lervag/vimtex', { 'for': ['tex'] }
@@ -289,8 +285,10 @@ map <leader>b :Buffers <CR>
 map <leader>l :Lines <CR>
 noremap ; :
 noremap <silent> <leader><space> :noh<cr>:call clearmatches()<cr>
+
 " Fast saving
 nmap <leader>w :w!<cr>
+nmap <leader>q :q<cr>
 
 map <leader>k :ThesaurusCurrent <CR>
 " What does that do?
@@ -330,17 +328,7 @@ vmap <C-v> c<ESC>"*p
 imap <C-v> <ESC>"*pa
 
 " }}}
-" YCM and UltiSnips {{{
-" make YCM compatible with UltiSnips (using supertab)
-" let g:ycm_global_ycm_extra_conf = '~/.vim/.ycm_extra_conf.py'
-let g:ycm_show_diagnostics_ui = 0
-let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
-let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
-" let g:ycm_seed_identifiers_with_syntax = 1
-let g:ycm_csharp_insert_namespace_expr = ''
-
-let g:SuperTabDefaultCompletionType = '<C-n>'
-
+" UltiSnips {{{
 " better key bindings for UltiSnipsExpandTrigger
 let g:UltiSnipsExpandTrigger = '<s-tab>'
 let g:UltiSnipsJumpForwardTrigger = '<s-tab>'
