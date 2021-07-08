@@ -28,8 +28,7 @@ Plug 'junegunn/fzf.vim'
 Plug 'scrooloose/nerdcommenter'
 Plug 'scrooloose/nerdtree'
 Plug 'ivalkeen/nerdtree-execute'
-" Plug 'ervandew/supertab'
-Plug 'bling/vim-airline'
+Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'rhysd/vim-clang-format', { 'for': ['cpp', 'cxx'] }
 Plug 'airblade/vim-gitgutter'
@@ -246,9 +245,6 @@ function! s:VSetSearch()
 endfunction
 vnoremap * :<C-u>call <SID>VSetSearch()<CR>//<CR><c-o>
 vnoremap # :<C-u>call <SID>VSetSearch()<CR>??<CR><c-o>
-
-" vnoremap p "0p " this needs to be more refined!
-
 " }}}
 " Nerdtree settings {{{
 let g:NERDTreeShowBookmarks=1
@@ -308,7 +304,7 @@ inoremap <down> <nop>
 " don't loose focus for n,N,*
 nnoremap n nzzzv
 nnoremap N Nzzzv
-nnoremap * m1viw*<esc>`1
+" nnoremap * m1viw*<esc>`1
 " nnoremap <F5> :GundoToggle<CR>
 " To open a new empty buffer
 nmap <leader>T :enew<cr>
@@ -336,16 +332,12 @@ let g:UltiSnipsJumpForwardTrigger = '<s-tab>'
 let g:UltiSnipsJumpBackwardTrigger = '<s-q>'
 let g:UltiSnipsEditSplit = 'vertical'
 " }}}
-" Airline, Peekaboo, fzf settings {{{
-" Prefix for the peekaboo key mapping (default: '')
-" let g:peekaboo_prefix = '<leader>'
-
+" Airline, fzf settings, Livedown {{{
 " airline settings
 let g:airline_theme = 'tomorrow'
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#fnamemod = ':t'
 let g:airline_powerline_fonts = 1
-" let g:airline#themes#solarized#palette = {}
 
 " fzf settings
 let g:fzf_files_options =
