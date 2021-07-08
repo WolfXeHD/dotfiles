@@ -6,6 +6,8 @@
 "   check out ReplaceWithRegister plugin
 "   checkout brooth/far.vim
 " }}}
+"VimPlug {{{
+"
 if empty(glob('~/.vim/autoload/plug.vim'))
   silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
     \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
@@ -17,8 +19,6 @@ if empty(glob('~/.config/nvim/autoload/plug.vim'))
     \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
   autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
-
-"VimPlug {{{
 call plug#begin()
 
 Plug 'Raimondi/delimitMate'
@@ -293,6 +293,7 @@ nmap <leader>q :q<cr>
 map <leader>k :ThesaurusCurrent <CR>
 " What does that do?
 map <leader><leader>d :s/\(\<\w\+\>\)\_s*\<\1\><CR>
+nnoremap <leader>s :%s/\<<C-r><C-w>\>/                    " pastes the word under the cursor to replace
 
 " disable arrowkeys
 noremap <Up> <Nop>
@@ -412,28 +413,6 @@ let g:ycm_semantic_triggers.tex = [
     \ 're!\\[A-Za-z]*',
     \ ]
 
-" }}}
-" DokuWiki {{{
-" looks for DokuWiki headlines in the first 20 lines
-" of the current buffer
-fun IsDokuWiki()
-  if match(getline(1,20),'^ \=\(=\{2,6}\).\+\1 *$') >= 0
-    set textwidth=0
-    set wrap
-    set linebreak
-    set filetype=dokuwiki
-  endif
-endfun
-
-" check for dokuwiki syntax
-autocmd BufWinEnter *.txt call IsDokuWiki()
-
-" Include DokuVimKi Configuration
-if filereadable($HOME."/.vim/dokuvimkirc")
-  source $HOME/.vim/dokuvimkirc
-endif
-
-syntax on
 " }}}
 " CoC {{{
 " TextEdit might fail if hidden is not set.
